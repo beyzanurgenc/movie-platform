@@ -1,4 +1,5 @@
-import { movieList } from "./logs";
+import { combineReducers } from "redux";
+import { movieList } from "./movieList";
 import { ui } from "./ui";
 
 const appReducer = combineReducers({

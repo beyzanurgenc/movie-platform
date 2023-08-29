@@ -1,0 +1,163 @@
+.app {
+    height: 100vh;
+    width: 100vh;
+}
+
+.list-view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.spinner {
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid #ffffff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.back-button,
+.direction-button {
+    border: none;
+    background: none;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.back-button {
+    font-size: 70px;
+}
+
+.app,
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    background: lightgray;
+}
+
+.container {
+    padding-top: 10%;
+}
+
+.horizontal-products,
+.vertical-products {
+    padding: 2%;
+}
+
+.card-view {
+    border-radius: 5% !important;
+    cursor: pointer;
+}
+
+.horizontal-products .card-view {
+    min-width: 400px !important;
+}
+
+.slider {
+    overflow-x: hidden;
+}
+
+.slider-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.back-button,
+.direction-button {
+    border: none;
+    background: none;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.back-button {
+    font-size: 70px;
+}
+
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.slider-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgb(229, 229, 229);
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.slider-dot.active {
+    background-color: #000;
+}
+
+.price-label {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.category-name,
+.product-name-label {
+    font-size: 18px;
+    color: #737272;
+    font-weight: 500;
+}
+
+.product-title {
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.badge-label {
+    width: fit-content;
+    color: black;
+    background-color: #f5f59a;
+    font-weight: bold;
+}
+
+.shipping-label {
+    color: green;
+}
+
+@media screen and (max-width: 850px) {
+    .card-view {
+        min-width: 180px !important;
+    }
+
+    .col-6 {
+        width: 60% !important;
+    }
+}

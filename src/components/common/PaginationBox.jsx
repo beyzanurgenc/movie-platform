@@ -30,7 +30,7 @@ const PaginationBox = ({ firstCallback, lastCallback, nextCallback, prevCallback
                         onClick={() => prevCallback()}
                         disabled={checkPrevFirstDisable(currentPage)}
                     >
-                        {"Prev"}
+                        {"Geri"}
                     </Button>
                     <span className="input-group-text mr-2 ml-2">
                         {currentPage}{' of '}{maxPage}
@@ -42,7 +42,7 @@ const PaginationBox = ({ firstCallback, lastCallback, nextCallback, prevCallback
                         onClick={() => nextCallback()}
                         disabled={checkNextLastDisable(currentPage, maxPage)}
                     >
-                        {"Next"}
+                        {"İleri"}
                     </Button>
                     <Button
                         color="primary"
