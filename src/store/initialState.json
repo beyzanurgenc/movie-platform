@@ -1,0 +1,12 @@
+{
+    "ui": {
+        "isMovieListRequestInProgress": false
+    },
+    "movieList": {
+        "dataList": [],
+        "selectedData": {},
+        "currentPage": 1,
+        "maxPage": 1,
+        "searchData": "Pokemon"
+    }
+}
