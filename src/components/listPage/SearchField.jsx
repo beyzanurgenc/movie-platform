@@ -12,31 +12,31 @@ const SearchField = () => {
     const dispatch = useDispatch();
 
     return (
-        <div className="col-12 row">
-            <div className="col-3">
+        <div className="d-flex justify-content-end">
+            <div className="col-auto">
                 <SearchBox
                     value={search.name}
-                    label={uiEnum.MAIN_PAGE.NAME + " *"}
+                    label={uiEnum.MAIN_PAGE.NAME + " * :"}
                     onInputChangeCallback={(e) => { setSearch(prev => ({ ...prev, name: e.target.value.trim() })) }}
                 />
             </div>
-            <div className="col-3">
+            <div className="col-auto ps-3">
                 <SearchBox
                     value={search.year}
                     type="number"
-                    label={uiEnum.MAIN_PAGE.YEAR}
+                    label={uiEnum.MAIN_PAGE.YEAR + ' :'}
                     onInputChangeCallback={(e) => { setSearch(prev => ({ ...prev, year: e.target.value.trim() })) }}
                 />
             </div>
-            <div className="col-3">
+            <div className="col-auto ps-3">
                 <DropdownSelect
-                    label={uiEnum.MAIN_PAGE.TYPE}
+                    label={uiEnum.MAIN_PAGE.TYPE + ' :'}
                     selectedValue={search.type}
                     onChangeCallback={(value) => { setSearch(prev => ({ ...prev, type: value })) }}
                 />
             </div>
-            <div className="col-3">
-                <Button onClick={() => {
+            <div className="col-auto ps-3">
+                <Button color="primary" disabled={search.name === ""} onClick={() => {
                     dispatch(movieList.movieListSearchDataChanged({ ...searchData, name: search.name, type: search.type, year: search.year }));
                 }}>{uiEnum.MAIN_PAGE.SEARCH}</Button>
             </div>

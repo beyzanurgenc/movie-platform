@@ -1,19 +1,24 @@
 const MAIN_PAGE = Object.freeze({
-    NAME: 'Movie Title',
+    NAME: 'Title',
     YEAR: 'Year',
     TYPE: 'Type',
     ID: 'IMDB ID',
     NO_DATA: 'No data found.',
     SEARCH: 'SEARCH',
-    ALL: "All",
-    MOVIE: "Movie",
-    SERIES: "Series",
-    EPISODE: "Episode"
+    ALL: "all",
+    MOVIE: "movie",
+    SERIES: "series",
+    EPISODE: "episode",
+    PREV: "Prev",
+    NEXT: "Next",
+    TIME: "Duration",
+    DIRECTOR: "Director",
+    ACTORS: "Actors",
+    IMDB_RATING: "IMDB Rating"
 });
 
 const ERROR_PAGE = Object.freeze({
-    HEADER: 'Üzgünüz!',
-    USER_MESSAGE: 'Üzgünüz, böyle bir sayfa bulunamadı!'
+    USER_MESSAGE: 'Sorry, page is not found!'
 });
 
 const uiEnum = {

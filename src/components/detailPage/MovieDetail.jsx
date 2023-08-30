@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import movieList from '../../actions/movieList';
 import { getMovieDetails } from '../../controllers/movieController';
+import uiEnum from '../../utils/constants/uiEnum';
 import HistoryBackButton from '../common/HistoryBackButton';
 
 const MovieDetail = () => {
@@ -19,37 +20,49 @@ const MovieDetail = () => {
             <div className="row">
                 <div className="col-5">
                     <div className="main-img">
-                        <img className="img-fluid" src={selectedData.Poster} alt="product" />
+                        <img className="img-fluid" src={selectedData.Poster} alt="movie" />
                     </div>
                 </div>
-                <div className="col-7">
+                <div className="col-7 row">
                     <div className="main-description px-2">
-                        <div className="category-name text-bold">
-                            {selectedData.Type}
-                        </div>
-                        <div className="product-title text-bold my-3">
+                        <div className="movie-title text-bold my-3">
                             {selectedData.Title}
                         </div>
-                        <div className="category-name text-bold">
-                            {"Süre: " + selectedData.Runtime}
+                        <div className="movie-name text-bold">
+                            {uiEnum.MAIN_PAGE.TYPE + ": " + selectedData.Type}
                         </div>
-                        <div className="category-name text-bold">
-                            {"Yönetmen: " + selectedData.Director}
-                        </div>
-                        <div className="category-name text-bold">
-                            {"Oyuncular: " + selectedData.Actors}
-                        </div>
-                        <div className="category-name text-bold">
-                            {"IMDB Puanı: " + selectedData.imdbRating}
-                        </div>
-                        <div className="category-name text-bold">
-                            {"IMDB Puanı: " + selectedData.imdbRating}
-                        </div>
+                        {
+                            selectedData.Runtime !== "N/A" ?
+                                <div className="movie-name text-bold">
+                                    {uiEnum.MAIN_PAGE.TIME + ": " + selectedData.Runtime}
+                                </div> : null
+                        }
+                        {
+                            selectedData.Director !== "N/A" ?
+                                <div className="movie-name text-bold">
+                                    {uiEnum.MAIN_PAGE.DIRECTOR + ": " + selectedData.Director}
+                                </div> : null
+                        }
+                        {
+                            selectedData.Actors !== "N/A" ?
+                                <div className="movie-name text-bold">
+                                    {uiEnum.MAIN_PAGE.ACTORS + ": " + selectedData.Actors}
+                                </div> : null
+                        }
+                        {
+                            selectedData.imdbRating !== "N/A" ?
+                                <div className="movie-name text-bold">
+                                    {uiEnum.MAIN_PAGE.IMDB_RATING + ": " + selectedData.imdbRating}
+                                </div> : null
+                        }
                     </div>
                     <div className="main-description px-2">
-                        <div className="category-name text-bold">
-                            {selectedData.Plot}
-                        </div>
+                        {
+                            selectedData.Plot !== "N/A" ?
+                                <div className="movie-name text-bold">
+                                    {selectedData.Plot}
+                                </div> : null
+                        }
                     </div>
                 </div>
             </div>

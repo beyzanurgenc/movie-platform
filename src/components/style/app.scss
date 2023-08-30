@@ -1,0 +1,92 @@
+$background-color: #ebeced;
+$button-color: #007bff;
+$hover-color: #ebf4fe;
+$title-color: #737272;
+
+.app,
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    background: $background-color;
+    overflow: auto;
+}
+
+.list-view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.selectable-table{
+    height: fit-content;
+}
+
+.linked-table-row {
+    min-height: 500px;
+}
+
+.selectable-table tbody tr:hover td,
+.selectable-table tbody tr:hover th {
+    background-color: $hover-color;
+    cursor: pointer;
+}
+
+.dropdown-view {
+    max-width: 100px;
+    min-width: 100px;
+    width: 100px;
+    background-color: white;
+    color: black;
+    border-radius: 0%;
+    border-color: white;
+}
+
+.dropdown-view:hover {
+    background-color: white;
+    color: black;
+    border-color: white;
+}
+
+.back-button,
+.direction-button {
+    border: none;
+    background: none;
+    font-size: 40px;
+    cursor: pointer;
+    color: $button-color;
+}
+
+.back-button {
+    font-size: 70px;
+}
+
+.container {
+    padding-top: 10%;
+}
+
+.back-button,
+.direction-button {
+    border: none;
+    background: none;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.back-button {
+    font-size: 70px;
+}
+
+.movie-name,
+.movie-name-label {
+    font-size: 18px;
+    color: $title-color;
+    font-weight: 500;
+}
+
+.movie-title {
+    font-size: 25px;
+    font-weight: 500;
+}

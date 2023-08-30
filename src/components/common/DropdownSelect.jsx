@@ -9,7 +9,7 @@ const DropdownSelect = ({ label, selectedValue, onChangeCallback }) => {
         <InputGroup>
             <Label className='me-4 my-auto'>{label}</Label>
             <Dropdown isOpen={isOpen} toggle={() => { setIsOpen(!isOpen) }}>
-                <DropdownToggle caret>{selectedValue === "" ? "Tümü" : selectedValue}</DropdownToggle>
+                <DropdownToggle className='dropdown-view' caret>{selectedValue === "" ? uiEnum.MAIN_PAGE.ALL : selectedValue}</DropdownToggle>
                 <DropdownMenu>
                     <DropdownItem onClick={() => { onChangeCallback("") }}>{uiEnum.MAIN_PAGE.ALL}</DropdownItem>
                     <DropdownItem onClick={() => { onChangeCallback("movie") }}>{uiEnum.MAIN_PAGE.MOVIE}</DropdownItem>

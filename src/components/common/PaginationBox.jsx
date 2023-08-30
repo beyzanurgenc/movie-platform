@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, ButtonGroup, ButtonToolbar } from 'reactstrap';
+import uiEnum from '../../utils/constants/uiEnum';
 
 const PaginationBox = ({ firstCallback, lastCallback, nextCallback, prevCallback, currentPage, maxPage }) => {
 
@@ -12,7 +13,7 @@ const PaginationBox = ({ firstCallback, lastCallback, nextCallback, prevCallback
     }
 
     return (
-        <div>
+        <div className='d-flex justify-content-end'>
             <ButtonToolbar>
                 <ButtonGroup aria-label="buttonGroup">
                     <Button
@@ -30,7 +31,7 @@ const PaginationBox = ({ firstCallback, lastCallback, nextCallback, prevCallback
                         onClick={() => prevCallback()}
                         disabled={checkPrevFirstDisable(currentPage)}
                     >
-                        {"Geri"}
+                        {uiEnum.MAIN_PAGE.PREV}
                     </Button>
                     <span className="input-group-text mr-2 ml-2">
                         {currentPage}{' of '}{maxPage}
@@ -42,7 +43,7 @@ const PaginationBox = ({ firstCallback, lastCallback, nextCallback, prevCallback
                         onClick={() => nextCallback()}
                         disabled={checkNextLastDisable(currentPage, maxPage)}
                     >
-                        {"İleri"}
+                        {uiEnum.MAIN_PAGE.NEXT}
                     </Button>
                     <Button
                         color="primary"

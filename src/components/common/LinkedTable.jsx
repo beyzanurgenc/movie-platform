@@ -1,15 +1,13 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import { Table } from 'reactstrap';
 import uiEnum from '../../utils/constants/uiEnum';
 
 
-const LinkedTable = ({ data, page }) => {
+const LinkedTable = ({ data, page, onClickCallback }) => {
 
     const startDataNumber = (page - 1) * 10 + 1;
-    const navigate = useNavigate();
     return (
-        <Table bordered>
+        <Table bordered striped className='selectable-table'>
             <thead>
                 <tr>
                     <th>#</th>
@@ -20,12 +18,12 @@ const LinkedTable = ({ data, page }) => {
             </thead>
             <tbody>
                 {data.length === 0 ? <p>{uiEnum.MAIN_PAGE.NO_DATA}</p> :
-                    data.map((film, index) => (
-                        <tr key={film.imdbID} onClick={() => { navigate("/movie/" + film.imdbID) }}>
+                    data.map((movie, index) => (
+                        <tr key={movie.imdbID} onClick={() => { onClickCallback(movie.imdbID) }}>
                             <th scope="row">{startDataNumber + index}</th>
-                            <td>{film.Title}</td>
-                            <td>{film.Year}</td>
-                            <td>{film.imdbID}</td>
+                            <td>{movie.Title}</td>
+                            <td>{movie.Year}</td>
+                            <td>{movie.imdbID}</td>
                         </tr>
                     ))
                 }

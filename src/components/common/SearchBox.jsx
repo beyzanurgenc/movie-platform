@@ -2,7 +2,7 @@
 import React from 'react';
 import { Input, InputGroup, Label } from 'reactstrap';
 
-const SearchBox = ({ value, type = "string", label,onInputChangeCallback }) => {
+const SearchBox = ({ value, type = "string", label, onInputChangeCallback }) => {
 
     return (
         <InputGroup >
@@ -10,7 +10,7 @@ const SearchBox = ({ value, type = "string", label,onInputChangeCallback }) => {
             <Input
                 id='inputField'
                 type={type}
-                placeholder={label + '...'}
+                placeholder={''}
                 onChange={(e) => onInputChangeCallback(e)}
                 value={value}
             />

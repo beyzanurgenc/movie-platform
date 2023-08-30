@@ -4,15 +4,14 @@ import { useSelector } from 'react-redux';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import MovieDetail from './components/detailPage/MovieDetail';
 import MovieList from './components/listPage/MovieList';
+import uiEnum from './utils/constants/uiEnum';
 
 const App = () => {
-  const dataList = useSelector(state => state.movieList.dataList);
-
   const router = createBrowserRouter([
     {
       path: "/",
       element: <MovieList />,
-      errorElement: <div>Hata oluştu!</div>,
+      errorElement: <div className='d-flex justify-content-center'>{uiEnum.ERROR_PAGE.USER_MESSAGE}</div>,
     },
     {
       path: "movie/:id",
