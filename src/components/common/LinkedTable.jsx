@@ -10,10 +10,10 @@ const LinkedTable = ({ data, page, onClickCallback }) => {
         <Table bordered striped className='selectable-table'>
             <thead>
                 <tr>
-                    <th>#</th>
-                    <th>{uiEnum.MAIN_PAGE.NAME}</th>
-                    <th>{uiEnum.MAIN_PAGE.YEAR}</th>
-                    <th>{uiEnum.MAIN_PAGE.ID}</th>
+                    <th style={{width: "7%"}}>#</th>
+                    <th style={{width: "40%"}}>{uiEnum.MAIN_PAGE.NAME}</th>
+                    <th style={{width: "40%"}}>{uiEnum.MAIN_PAGE.YEAR}</th>
+                    <th style={{width: "13%"}}>{uiEnum.MAIN_PAGE.ID}</th>
                 </tr>
             </thead>
             <tbody>

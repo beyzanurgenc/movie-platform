@@ -1,6 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import React from 'react';
-import { useSelector } from 'react-redux';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import MovieDetail from './components/detailPage/MovieDetail';
 import MovieList from './components/listPage/MovieList';
@@ -15,7 +14,8 @@ const App = () => {
     },
     {
       path: "movie/:id",
-      element: <MovieDetail />
+      element: <MovieDetail />,
+      errorElement: <div className='d-flex justify-content-center'>{uiEnum.ERROR_PAGE.USER_MESSAGE}</div>,
     },
   ]);
 

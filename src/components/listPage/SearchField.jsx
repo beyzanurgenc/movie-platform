@@ -17,7 +17,7 @@ const SearchField = () => {
                 <SearchBox
                     value={search.name}
                     label={uiEnum.MAIN_PAGE.NAME + " * :"}
-                    onInputChangeCallback={(e) => { setSearch(prev => ({ ...prev, name: e.target.value.trim() })) }}
+                    onInputChangeCallback={(e) => { setSearch(prev => ({ ...prev, name: e.target.value })) }}
                 />
             </div>
             <div className="col-auto ps-3">
@@ -25,7 +25,7 @@ const SearchField = () => {
                     value={search.year}
                     type="number"
                     label={uiEnum.MAIN_PAGE.YEAR + ' :'}
-                    onInputChangeCallback={(e) => { setSearch(prev => ({ ...prev, year: e.target.value.trim() })) }}
+                    onInputChangeCallback={(e) => { setSearch(prev => ({ ...prev, year: e.target.value })) }}
                 />
             </div>
             <div className="col-auto ps-3">
@@ -37,7 +37,7 @@ const SearchField = () => {
             </div>
             <div className="col-auto ps-3">
                 <Button color="primary" disabled={search.name === ""} onClick={() => {
-                    dispatch(movieList.movieListSearchDataChanged({ ...searchData, name: search.name, type: search.type, year: search.year }));
+                    dispatch(movieList.movieListSearchDataChanged({ ...searchData, name: search.name.trim(), type: search.type, year: search.year }));
                 }}>{uiEnum.MAIN_PAGE.SEARCH}</Button>
             </div>
         </div>

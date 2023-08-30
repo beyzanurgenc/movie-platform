@@ -1,6 +1,6 @@
 import movieList from '../actions/movieList';
 import ui from '../actions/ui';
-import { getMoviesByNameRequest, getMovieDetailRequest } from '../services/movieService';
+import { getMovieDetailRequest, getMoviesByNameRequest } from '../services/movieService';
 
 export const getMoviesByName = (search) => {
     return (dispatch) => {
@@ -29,6 +29,7 @@ export const getMoviesByName = (search) => {
 export const getMovieDetails = (imdbId) => {
     return (dispatch) => {
         return new Promise((resolve, reject) => {
+            dispatch(ui.movieDetailRequestStatusChanged(true));
             let getMoviesByNameRequestPromise = getMovieDetailRequest(imdbId);
             getMoviesByNameRequestPromise.then((result) => {
                 if (result.Response === "True") {
@@ -38,7 +39,9 @@ export const getMovieDetails = (imdbId) => {
                     //TODO: Handle errors.
                     reject({});
                 }
+                dispatch(ui.movieDetailRequestStatusChanged(false));
             }, (error) => {
+                dispatch(ui.movieDetailRequestStatusChanged(false));
                 reject({});
             });
         })

@@ -6,4 +6,7 @@ export const ui = createReducer({}, (builder) => {
         .addCase(actionEnum.MOVIE_LIST_REQUEST_STATUS_CHANGED, (state, action) => {
             state.isMovieListRequestInProgress = action.payload;
         })
+        .addCase(actionEnum.MOVIE_DETAIL_REQUEST_STATUS_CHANGED, (state, action) => {
+            state.isMovieDetailRequestInProgress = action.payload;
+        })
 });

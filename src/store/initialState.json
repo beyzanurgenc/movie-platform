@@ -1,6 +1,7 @@
 {
     "ui": {
-        "isMovieListRequestInProgress": false
+        "isMovieListRequestInProgress": false,
+        "isMovieDetailRequestInProgress": false
     },
     "movieList": {
         "dataList": [],

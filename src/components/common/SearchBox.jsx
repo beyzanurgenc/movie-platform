@@ -1,4 +1,3 @@
-// PACKAGES
 import React from 'react';
 import { Input, InputGroup, Label } from 'reactstrap';
 
